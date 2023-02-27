@@ -2,6 +2,7 @@ import React from 'react';
 // my imports
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Character } from './components/Character';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -29,7 +30,11 @@ const App = () => {
       <h1 className="Header">Characters</h1>
       {people.map((character) => {
         return (
-          <h2>{character.name}</h2>        )
+          <div>
+            <h2>{character.name}</h2>
+            <Character character={character} name={character.name} />     
+          </div>
+        )
       })}
     </div>
   );
