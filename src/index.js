@@ -7,6 +7,8 @@ import "./App.css";
 
 // My Imports
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./components/CharacterContainer.css"
+import "./components/Character.css"
 
 import { worker } from "./mocks/browser";
 worker.start();

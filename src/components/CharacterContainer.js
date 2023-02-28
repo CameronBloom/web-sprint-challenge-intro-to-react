@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Accordion } from 'reactstrap';
 import { Character } from './Character';
 
-
 export default function CharacterContainer(props) {
   const [open, setOpen] = useState('1');
   const toggle = (id) => {
@@ -12,14 +11,13 @@ export default function CharacterContainer(props) {
       setOpen(id);
     }
   };
-  console.log(props.characters);
-
+  
   return (
-    <div>
+    <div className="accordian">
       <Accordion open={open} toggle={toggle}>
         {
           props.characters.map((character, idx) => {
-            return <Character character={character} index={idx + 1} />;
+            return <Character character={character} key={idx + 1} index={(idx + 1).toString()} worlds={props.worlds} films={props.films} starships={props.starships} vehicles={props.vehicles}/>;
           })
         }
       </Accordion>

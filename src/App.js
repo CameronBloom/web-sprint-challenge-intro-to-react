@@ -16,6 +16,10 @@ const App = () => {
 
   const [people, setPeople] = useState([]);
   const [search, setSearch] = useState("");
+  const [homes, setHomes] = useState([]);
+  const [films, setFilms] = useState([]);
+  const [ships, setShips] = useState([]);
+  const [vehicles, setVehicles] = useState([]);
 
   useEffect(() => {
     axios
@@ -26,7 +30,43 @@ const App = () => {
       .catch(err => console.log(err))
   }, []);
 
-  // console.log(people);
+  useEffect(() => {
+    axios
+      .get(`https://swapi.dev/api/planets`)
+      .then(res => {
+        setHomes(res.data.results);
+      })
+      .catch(err => console.log(err))
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`https://swapi.dev/api/films`)
+      .then(res => {
+        setFilms(res.data.results);
+      })
+      .catch(err => console.log(err))
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`https://swapi.dev/api/starships`)
+      .then(res => {
+        setShips(res.data.results);
+      })
+      .catch(err => console.log(err))
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`https://swapi.dev/api/vehicles`)
+      .then(res => {
+        setVehicles(res.data.results);
+      })
+      .catch(err => console.log(err))
+  }, []);
+
+  // console.log(vehicles);
 
   const getFilteredCharacters = () => {
     const searchNormalized = search.trim().toLowerCase();
@@ -40,7 +80,7 @@ const App = () => {
     <div className="App">
       <h1 className="Header">{"React Wars >"}</h1>
       <Search setSearch={setSearch} />
-      <CharacterContainer characters={getFilteredCharacters()} />
+      <CharacterContainer characters={getFilteredCharacters()} worlds={homes} films={films} starships={ships} vehicles={vehicles} />
     </div>
   );
 }
