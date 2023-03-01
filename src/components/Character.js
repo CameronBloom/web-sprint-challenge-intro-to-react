@@ -34,6 +34,7 @@ export function Character(props) {
         <div className="column">
           <div className="row record-content">
             <div className="char-info">
+              <p>{props.character.name}</p>
               <p><strong>Full Name:</strong> <a href={props.character.url} target="_blank" rel="noreferrer">{props.character.name}</a></p>
               <p><strong>Gender:</strong> {props.character.gender}</p>
               <p><strong>Height:</strong> {props.character.height}</p>
