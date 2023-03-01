@@ -24,9 +24,9 @@ const App = () => {
 
     useEffect(() => {
       axios
-      .get(`https://swapi.dev/api/people`)
+      .get("https://swapi.dev/api/people/")
       .then(res => {
-        setPeople(res.data.results);
+        setPeople(res.data);
       })
       .catch(err => console.log(err))
     }, []);
@@ -75,7 +75,7 @@ const App = () => {
   //     })
   //     .catch(err => console.log(err))
   // }, []);
-
+  console.log(people);
   const getFilteredCharacters = () => {
     const searchNormalized = search.trim().toLowerCase();
     if (!searchNormalized) return people
