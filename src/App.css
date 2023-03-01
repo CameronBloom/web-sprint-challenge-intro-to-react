@@ -1,8 +1,11 @@
 .App {
   text-align: center;
+  box-sizing: border-box;
 }
 .Header {
   color: #443e3e;
   text-shadow: 1px 1px 5px #fff;
+  margin: 1rem auto;
+  box-sizing: border-box;
 }
 /* write your parent styles in here for your App.js */

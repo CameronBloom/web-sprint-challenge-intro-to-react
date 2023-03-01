@@ -7,12 +7,28 @@ import {
 
 // Write your Character component here
 export function Character(props) {
-  console.log(props.worlds);
-  console.log(props.films);
-  console.log(props.starships);
-  console.log(props.vehicles);
+  // const dataWorlds = props.worlds.map((world, idx) => {
+  //   return {id: idx+1, world: world.name};
+  // });
+  // const dataFilms = props.films.map((film, idx) => {
+  //   return {id: idx+1, title: film.title};
+  // });
+  // const dataSpecies = props.species.map((species, idx) => {
+  //   return {id: idx+1, name: species.name};
+  // });
+  // const dataStarships = props.starships.map((starship, idx) => {
+  //   return {id: idx+1, name: starship.name};
+  // });
+  // const dataVehicles = props.vehicles.map((vehicle, idx) => {
+  //   return {id: idx+1, name: vehicle.name};
+  // });
+
+
+  // The first Character object generates a unique "key" prop warning.
+  // None of the subsequent Character object generate a prop warning.
   return (
-    <AccordionItem>
+    
+    <AccordionItem key={props.index}>
       <AccordionHeader targetId={props.index}>{props.character.name}</AccordionHeader>
       <AccordionBody accordionId={props.index}>
         <div className="column">

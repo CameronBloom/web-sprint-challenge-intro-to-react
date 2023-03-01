@@ -10,7 +10,7 @@ export default function Search(props) {
   }
 
   return (
-    <div className='search-friends container'>
+    <div className='search-characters'>
       <input onChange={changeHandler} />
     </div>
   )

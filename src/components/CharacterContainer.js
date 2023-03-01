@@ -6,7 +6,7 @@ export default function CharacterContainer(props) {
   const [open, setOpen] = useState('1');
   const toggle = (id) => {
     if (open === id) {
-      setOpen();
+      setOpen("");
     } else {
       setOpen(id);
     }
@@ -17,7 +17,8 @@ export default function CharacterContainer(props) {
       <Accordion open={open} toggle={toggle}>
         {
           props.characters.map((character, idx) => {
-            return <Character character={character} key={idx + 1} index={(idx + 1).toString()} worlds={props.worlds} films={props.films} starships={props.starships} vehicles={props.vehicles}/>;
+            const keyId = (idx + 1).toString();
+            return <Character character={character} key={keyId} index={keyId} worlds={props.worlds} films={props.films} species={props.species} starships={props.starships} vehicles={props.vehicles}/>;
           })
         }
       </Accordion>

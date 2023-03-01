@@ -1,0 +1,13 @@
+.search-characters {
+  margin: 1rem;
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.search-characters input {
+  box-sizing: border-box;
+  margin: 1rem;
+  width: 80%;
+}

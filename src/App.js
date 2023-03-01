@@ -3,7 +3,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import CharacterContainer from './components/CharacterContainer';
-import { Character } from './components/Character';
+// import { Character } from './components/Character';
 import Search from './components/Search';
 
 const App = () => {
@@ -18,17 +18,18 @@ const App = () => {
   const [search, setSearch] = useState("");
   const [homes, setHomes] = useState([]);
   const [films, setFilms] = useState([]);
+  const [species, setSpecies] = useState([]);
   const [ships, setShips] = useState([]);
   const [vehicles, setVehicles] = useState([]);
 
-  useEffect(() => {
-    axios
+    useEffect(() => {
+      axios
       .get(`https://swapi.dev/api/people`)
       .then(res => {
         setPeople(res.data.results);
       })
       .catch(err => console.log(err))
-  }, []);
+    }, []);
 
   useEffect(() => {
     axios
@@ -44,6 +45,15 @@ const App = () => {
       .get(`https://swapi.dev/api/films`)
       .then(res => {
         setFilms(res.data.results);
+      })
+      .catch(err => console.log(err))
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`https://swapi.dev/api/species`)
+      .then(res => {
+        setSpecies(res.data.results);
       })
       .catch(err => console.log(err))
   }, []);
@@ -66,8 +76,6 @@ const App = () => {
       .catch(err => console.log(err))
   }, []);
 
-  // console.log(vehicles);
-
   const getFilteredCharacters = () => {
     const searchNormalized = search.trim().toLowerCase();
     if (!searchNormalized) return people
@@ -80,7 +88,7 @@ const App = () => {
     <div className="App">
       <h1 className="Header">{"React Wars >"}</h1>
       <Search setSearch={setSearch} />
-      <CharacterContainer characters={getFilteredCharacters()} worlds={homes} films={films} starships={ships} vehicles={vehicles} />
+      <CharacterContainer characters={getFilteredCharacters()} worlds={homes} films={films} species={species} starships={ships} vehicles={vehicles} />
     </div>
   );
 }
