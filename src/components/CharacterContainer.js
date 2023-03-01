@@ -15,18 +15,18 @@ export default function CharacterContainer(props) {
   return (
     <div className="accordian">
         {
-          props.characters.map((character, idx) => {
+          props.characters.map((character) => {
             return <div>{character.name}</div>;
           })
         }
-      <Accordion open={open} toggle={toggle}>
+      {/* <Accordion open={open} toggle={toggle}>
         {
           props.characters.map((character, idx) => {
             const keyId = (idx + 1).toString();
             return <Character character={character} key={keyId} index={keyId} worlds={props.worlds} films={props.films} species={props.species} starships={props.starships} vehicles={props.vehicles}/>;
           })
         }
-      </Accordion>
+      </Accordion> */}
     </div>
   );
 }
