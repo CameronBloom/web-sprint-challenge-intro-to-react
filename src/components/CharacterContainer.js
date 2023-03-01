@@ -14,6 +14,11 @@ export default function CharacterContainer(props) {
   
   return (
     <div className="accordian">
+        {
+          props.characters.map((character, idx) => {
+            return <div>{character.name}</div>;
+          })
+        }
       <Accordion open={open} toggle={toggle}>
         {
           props.characters.map((character, idx) => {
