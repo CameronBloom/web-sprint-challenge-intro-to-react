@@ -31,50 +31,50 @@ const App = () => {
       .catch(err => console.log(err))
     }, []);
 
-  useEffect(() => {
-    axios
-      .get(`https://swapi.dev/api/planets`)
-      .then(res => {
-        setHomes(res.data.results);
-      })
-      .catch(err => console.log(err))
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://swapi.dev/api/planets`)
+  //     .then(res => {
+  //       setHomes(res.data.results);
+  //     })
+  //     .catch(err => console.log(err))
+  // }, []);
 
-  useEffect(() => {
-    axios
-      .get(`https://swapi.dev/api/films`)
-      .then(res => {
-        setFilms(res.data.results);
-      })
-      .catch(err => console.log(err))
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://swapi.dev/api/films`)
+  //     .then(res => {
+  //       setFilms(res.data.results);
+  //     })
+  //     .catch(err => console.log(err))
+  // }, []);
 
-  useEffect(() => {
-    axios
-      .get(`https://swapi.dev/api/species`)
-      .then(res => {
-        setSpecies(res.data.results);
-      })
-      .catch(err => console.log(err))
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://swapi.dev/api/species`)
+  //     .then(res => {
+  //       setSpecies(res.data.results);
+  //     })
+  //     .catch(err => console.log(err))
+  // }, []);
 
-  useEffect(() => {
-    axios
-      .get(`https://swapi.dev/api/starships`)
-      .then(res => {
-        setShips(res.data.results);
-      })
-      .catch(err => console.log(err))
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://swapi.dev/api/starships`)
+  //     .then(res => {
+  //       setShips(res.data.results);
+  //     })
+  //     .catch(err => console.log(err))
+  // }, []);
 
-  useEffect(() => {
-    axios
-      .get(`https://swapi.dev/api/vehicles`)
-      .then(res => {
-        setVehicles(res.data.results);
-      })
-      .catch(err => console.log(err))
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://swapi.dev/api/vehicles`)
+  //     .then(res => {
+  //       setVehicles(res.data.results);
+  //     })
+  //     .catch(err => console.log(err))
+  // }, []);
 
   const getFilteredCharacters = () => {
     const searchNormalized = search.trim().toLowerCase();
